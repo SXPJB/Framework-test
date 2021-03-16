@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Consumes rest-api</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Simple consumes rest-api whit ajax</a>
+    </div>
+</nav>
+
+<div class="container-fluid my-2">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card p-4">
+                <label class="form-label" for="name">Name: </label>
+                <input class="form-control" type="text" id="name" required>
+                <label class="form-label" for="Surname">Surname: </label>
+                <input class="form-control" type="text" id="surname" required>
+                <label class="form-label" for="dateBirth">Birthdate: </label>
+                <input class="form-control" type="date" id="dateBirth" required>
+                <label class="form-label" for="gender">Gender: </label>
+                <select class="form-select" aria-label="Default select example" id="gender">
+                    <option selected>Open this select menu</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+                <button class="btn btn-primary m-2" id="button">save</button>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <table class="table">
+                <thead>
+                <tr>
+                    <td scope="col">#</td>
+                    <td scope="col">Name</td>
+                    <td scope="col">Surname</td>
+                    <td scope="col">Birthdate</td>
+                    <td scope="col">gender</td>
+                </tr>
+                </thead>
+                <tbody id="tbody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script src="app.js"></script>
+</body>
+</html>

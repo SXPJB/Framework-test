@@ -1,0 +1,50 @@
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Simple consumes rest-api whit Angular and HttpClient</a>
+  </div>
+</nav>
+<div class="container-fluid my-2">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card p-4">
+        <label class="form-label" for="name">Name: </label>
+        <input class="form-control" type="text" id="name" [(ngModel)]="user.name">
+        <label class="form-label" for="Surname">Surname: </label>
+        <input class="form-control" type="text" id="surname" [(ngModel)]="user.surname">
+        <label class="form-label" for="dateBirth">Birthdate: </label>
+        <input class="form-control" type="date" id="dateBirth" [(ngModel)]="user.datebrith">
+        <label class="form-label" for="gender">Gender: </label>
+        <select class="form-select" aria-label="Default select example" id="gender" [(ngModel)]="user.gender">
+          <option selected>Open this select menu</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+        <button class="btn btn-primary m-2" id="button" (click)="saveUser()">save</button>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <table class="table">
+        <thead>
+        <tr>
+          <td>#</td>
+          <td>Name</td>
+          <td>Surname</td>
+          <td>Birthdate</td>
+          <td>Gender</td>
+          <td>Actions</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{user.id}}</td>
+          <td>{{user.name}}</td>
+          <td>{{user.surname}}</td>
+          <td>{{this.pipe.transform(user.datebrith, 'longDate')}}</td>
+          <td>{{user.gender}}</td>
+          <td><button class="btn btn-danger" (click)="deleteUser(user.id)">Delete</button></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
